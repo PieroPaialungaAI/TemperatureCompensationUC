@@ -17,7 +17,6 @@ def preprocess_data(data):
     Y_columns = [c for c in data.columns if c.split('.')[0]=='Resistance']
     Y = np.array(data[Y_columns])
     index_list = np.arange(0,len(X))
-    np.random.shuffle(index_list)
     split_value = int(len(index_list)*0.8)
     train_list = index_list[0:split_value]
     test_list = index_list[split_value:]
