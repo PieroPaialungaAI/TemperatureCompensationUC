@@ -23,7 +23,7 @@ def preprocess_data(data):
     min_max.fit(X[train_list])
     X_raw = X.copy()
     X = min_max.transform(X)
-    return {'train_list':train_list,'test_list':train_list,'X':X,'Y':Y,'X_columns':X_columns,'Y_columns':Y_columns,'X_raw':X_raw}
+    return {'train_list':train_list,'test_list':train_list.tolist()+test_list.tolist(),'X':X,'Y':Y,'X_columns':X_columns,'Y_columns':Y_columns,'X_raw':X_raw}
 
 def model_data(data_dict):
     train_list = data_dict['train_list']
